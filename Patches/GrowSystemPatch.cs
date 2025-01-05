@@ -2,17 +2,34 @@ namespace ResidentsFarmWithYou.Patches
 {
     public static class GrowSystemPatch
     {
-        public static void ApplySeedPrefix(ref Thing t)
+        public static bool ApplySeedPrefix(ref Thing t)
         {
+            PlantData plantData = EClass._map?.TryGetPlant(c: GrowSystem.cell);
+            Thing thing = (plantData != null) ? plantData.seed : null;
+            int encLv = thing.encLV;
+            bool flag = t.IsFood || t.Evalue(ele: 10) > 0 || t.id == "grass";
+            foreach (Element element in thing.elements?.dict?.Values)
+            {
+                if ((!element.IsFoodTrait || flag) && (element.IsFoodTrait || element.id == 2))
+                {
+                    t.elements.ModBase(ele: element.id, v: element.Value);
+                }
+            }
+            t.SetEncLv(a: encLv);
+            t.c_refText = t.c_refText;
+            t.isCrafted = true;
+            
             if (ResidentsFarmWithYouConfig.EnableAutoPlaceFarmingItems?.Value == false ||
                 EClass.core?.IsGameStarted == false ||
                 EClass._zone?.IsPCFaction == false ||
                 t == null)
             {
-                return; 
+                return false; 
             }
             
             t.isWeightChanged = true;
+
+            return false;
         }
 
         public static bool TryPickPrefix(GrowSystem __instance, Thing t, Chara c, bool applySeed)
@@ -28,7 +45,7 @@ namespace ResidentsFarmWithYou.Patches
             
             if (applySeed)
             {
-                __instance.ApplySeed(t);
+                __instance.ApplySeed(t: t);
             }
             
             if (EClass._zone?.TryAddThingInSharedContainer(t: t, containers: null, add: true, msg: false, chara: null, sharedOnly: true) == false)

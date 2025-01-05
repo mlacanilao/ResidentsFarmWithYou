@@ -42,9 +42,9 @@ namespace ResidentsFarmWithYou
         
         [HarmonyPrefix]
         [HarmonyPatch(declaringType: typeof(GrowSystem), methodName: nameof(GrowSystem.ApplySeed))]
-        public static void GrowSystemApplySeed(ref Thing t)
+        public static bool GrowSystemApplySeed(ref Thing t)
         {
-            GrowSystemPatch.ApplySeedPrefix(t: ref t);
+            return GrowSystemPatch.ApplySeedPrefix(t: ref t);
         }
         
         [HarmonyPrefix]
