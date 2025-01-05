@@ -5,6 +5,7 @@ namespace ResidentsFarmWithYou.Patches
         public static void ModExpPrefix(ElementContainer __instance, int ele, int a, bool chain)
         {
             if (EClass.core?.IsGameStarted == false ||
+                EClass._zone?.IsPCFaction == false ||
                 __instance.Chara?.IsPC == false ||
                 (ele != 286 && ele != 250) ||
                 EClass._zone?.branch is null)

@@ -8,6 +8,7 @@ namespace ResidentsFarmWithYou.Patches
         public static bool OnProgressPrefix(AI_Farm __instance)
         {
             if (EClass.core?.IsGameStarted == false ||
+                EClass._zone?.IsPCFaction == false ||
                 __instance == null || 
                 __instance.owner?.IsPC == true)
             {

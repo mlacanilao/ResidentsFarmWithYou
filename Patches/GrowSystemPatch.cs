@@ -4,8 +4,22 @@ namespace ResidentsFarmWithYou.Patches
     {
         public static bool ApplySeedPrefix(ref Thing t)
         {
+            if (t == null ||
+                EClass.core?.IsGameStarted == false ||
+                EClass._zone?.IsPCFaction == false)
+            {
+                return true;
+            }
+            
             PlantData plantData = EClass._map?.TryGetPlant(c: GrowSystem.cell);
-            Thing thing = (plantData != null) ? plantData.seed : null;
+
+            Thing thing = plantData?.seed;
+
+            if (thing == null)
+            {
+                return true;
+            }
+
             int encLv = thing.encLV;
             bool flag = t.IsFood || t.Evalue(ele: 10) > 0 || t.id == "grass";
             foreach (Element element in thing.elements?.dict?.Values)
@@ -19,10 +33,7 @@ namespace ResidentsFarmWithYou.Patches
             t.c_refText = t.c_refText;
             t.isCrafted = true;
             
-            if (ResidentsFarmWithYouConfig.EnableAutoPlaceFarmingItems?.Value == false ||
-                EClass.core?.IsGameStarted == false ||
-                EClass._zone?.IsPCFaction == false ||
-                t == null)
+            if (ResidentsFarmWithYouConfig.EnableAutoPlaceFarmingItems?.Value == false)
             {
                 return false; 
             }

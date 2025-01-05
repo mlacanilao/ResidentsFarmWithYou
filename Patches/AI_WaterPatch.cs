@@ -7,7 +7,7 @@ namespace ResidentsFarmWithYou.Patches
     {
         public static bool OnProgressCompletePrefix(AI_Water __instance)
         {
-            __instance.owner.PlaySound(id: "water_farm", v: 1f, spatial: true);
+            __instance.owner?.PlaySound(id: "water_farm", v: 1f, spatial: true);
             EClass._map?.SetLiquid(x: __instance.pos.x, z: __instance.pos.z, id: 1, value: 2);
             __instance.pos.cell.isWatered = true;
             
