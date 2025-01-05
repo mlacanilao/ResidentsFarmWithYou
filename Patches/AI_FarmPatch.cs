@@ -16,7 +16,8 @@ namespace ResidentsFarmWithYou.Patches
             
             __instance.owner?.PlaySound(id: "Material/mud", v: 1f, spatial: true);
             
-            PlantData plantData = EClass._map.TryGetPlant(c: __instance.owner?.pos?.cell);
+            PlantData plantData = EClass._map?.TryGetPlant(c: __instance.owner?.pos?.cell);
+            
             if (FarmUtils.CanGrow(cell: __instance.pos?.cell) == true &&
                 plantData != null)
             {
@@ -46,6 +47,7 @@ namespace ResidentsFarmWithYou.Patches
                         
                         // Try pop seed
                         Thing thing = TraitSeed.MakeSeed(obj: __instance.pos?.growth?.source, plant: plantData);
+                        
                         __instance.pos?.growth?.ApplySeed(t: thing);
                         
                         // Try move seed
@@ -55,6 +57,7 @@ namespace ResidentsFarmWithYou.Patches
                         }
                         
                         __instance.pos?.growth?.PopMineObj(c: null);
+                        
                         if (thing != null)
                         {
                             __instance.pos?.SetObj(id: 0, value: 1, dir: 0);
@@ -92,7 +95,7 @@ namespace ResidentsFarmWithYou.Patches
                     cell.objVal += (byte)num;
                 }
                 __instance.pos?.cell.Refresh();
-                EClass._map.RefreshFOV(x: (int)__instance.owner?.pos?.cell.x, z: (int)__instance.owner?.pos?.cell.z, radius: 6, recalculate: false);
+                EClass._map?.RefreshFOV(x: (int)__instance.owner?.pos?.cell.x, z: (int)__instance.owner?.pos?.cell.z, radius: 6, recalculate: false);
                 
                 // Move extra items to shared container
                 foreach (Card card in __instance.pos?.ListCards())

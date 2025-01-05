@@ -5,8 +5,12 @@ namespace ResidentsFarmWithYou.Patches
 {
     public static class AI_WaterPatch
     {
-        public static void OnProgressCompletePostfix(AI_Water __instance)
+        public static bool OnProgressCompletePrefix(AI_Water __instance)
         {
+            __instance.owner.PlaySound(id: "water_farm", v: 1f, spatial: true);
+            EClass._map?.SetLiquid(x: __instance.pos.x, z: __instance.pos.z, id: 1, value: 2);
+            __instance.pos.cell.isWatered = true;
+            
             Point newFarmPoint = null;
 
             List<Point> neighbors = FarmUtils.GetNeighborPoints(origin: __instance.pos);
@@ -27,6 +31,8 @@ namespace ResidentsFarmWithYou.Patches
                     pos = newFarmPoint
                 });
             }
+
+            return false;
         }
     }
 }

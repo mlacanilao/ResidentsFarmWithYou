@@ -14,10 +14,21 @@
     [*] Residents will harvest crops, replant seeds, use fertilizer, and water the crops.
     [*] Harvested crops will go into the player inventory, and seeds will be placed into shared containers.
     [*] Requires a [b]Farm Sign[/b] nearby to enable resident participation.
+    [*] Optionally enable automatic placement of farming items into shared containers for both residents and players.
     [/list]
 
     [h1] Compatibility [/h1]
     This mod works with existing save files.
+
+    [h1] Configuration [/h1]
+    Adjust these settings via the configuration file:
+
+    [h2] Enable Auto Place Farming Items [/h2]
+    Enable or disable automatically placing farming items into shared containers for both residents and players.
+    [code] Default: false [/code]
+
+    [h1] Configuration File Location [/h1]
+    [code] Steam\steamapps\common\Elin\BepInEx\config\omegaplatinum.elin.residentsfarmwithyou.cfg [/code]
 
     Supports Game Version: 0.23.67
 
@@ -25,12 +36,23 @@
     [list]
     [*] 農作業や園芸の趣味や仕事を持つ住人が、あなたが農作業や収穫を開始すると積極的に参加します。
     [*] 住人は作物の収穫、種の再植え付け、肥料の使用、灌漑を行います。
-    [*] 収穫された作物はプレイヤーのインベントリに入り、種は再利用のため共有コンテナに格納されます。
+    [*] 収穫された作物はプレイヤーのインベントリに入り、種は共有コンテナに格納されます。
     [*] 住人が参加するには、近くに[b]畑の立札[/b]が必要です。
+    [*] 住人やプレイヤーが農作業アイテムを共有コンテナに自動的に配置するオプションを有効にできます。
     [/list]
 
     [h1] 互換性 [/h1]
     このMODは既存のセーブデータと完全に互換性があり、新しいプレイスルーは不要です。
+
+    [h1] 設定 [/h1]
+    設定ファイルから以下の設定を調整できます:
+
+    [h2] 農作業アイテムの自動配置設定 [/h2]
+    住人やプレイヤーが農作業アイテムを自動的に共有コンテナに配置するかどうかを設定します。
+    [code] デフォルト: false [/code]
+
+    [h1] 設定ファイルの場所 [/h1]
+    [code] Steam\steamapps\common\Elin\BepInEx\config\omegaplatinum.elin.residentsfarmwithyou.cfg [/code]
 
     対応ゲームバージョン: 0.23.67
   </description>

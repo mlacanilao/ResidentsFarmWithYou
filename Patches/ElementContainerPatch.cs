@@ -43,7 +43,7 @@ namespace ResidentsFarmWithYou.Patches
                 }
 
                 if (hasFarmingWork == true &&
-                    (chara.ai is AIWork_Farm == false || chara.ai is AI_Farm == false || chara.ai is AI_Water == false))
+                    !(chara.ai is AIWork_Farm || chara.ai is AI_Farm || chara.ai is AI_Water))
                 {
                     Goal goal = chara.GetGoalWork();
                     if (goal is GoalWork goalWork)
@@ -53,7 +53,7 @@ namespace ResidentsFarmWithYou.Patches
                 }
 
                 if (hasFarmingHobby == true &&
-                    (chara.ai is AIWork_Farm == false || chara.ai is AI_Farm == false || chara.ai is AI_Water == false))
+                    !(chara.ai is AIWork_Farm || chara.ai is AI_Farm || chara.ai is AI_Water))
                 {
                     Goal goal = chara.GetGoalHobby();
                     if (goal is GoalHobby goalHobby)

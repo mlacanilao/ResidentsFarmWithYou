@@ -7,7 +7,7 @@ namespace ResidentsFarmWithYou
     {
         internal const string Guid = "omegaplatinum.elin.residentsfarmwithyou";
         internal const string Name = "Residents Farm with You";
-        internal const string Version = "1.2.0.0";
+        internal const string Version = "1.3.0.0";
     }
 
     [BepInPlugin(GUID: ModInfo.Guid, Name: ModInfo.Name, Version: ModInfo.Version)]
@@ -18,6 +18,8 @@ namespace ResidentsFarmWithYou
         private void Start()
         {
             Instance = this;
+            
+            ResidentsFarmWithYouConfig.LoadConfig(config: Config);
 
             Harmony.CreateAndPatchAll(type: typeof(Patcher), harmonyInstanceId: ModInfo.Guid);
         }
