@@ -70,6 +70,7 @@ namespace ResidentsFarmWithYou.Patches
                         
                         // Try pop seed
                         Thing thing2 = TraitSeed.MakeSeed(obj: __instance.pos?.growth?.source, plant: plantData);
+                        
                         __instance.pos?.growth?.ApplySeed(t: thing2);
                         
                         // Try move seed
