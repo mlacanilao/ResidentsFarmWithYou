@@ -12,7 +12,8 @@ namespace ResidentsFarmWithYou.Patches
                 t.isWeightChanged == false ||
                 t.isCrafted == false ||
                 t.pos?.IsInBounds == true ||
-                __instance.ai is AI_Eat)
+                __instance.ai is AI_Eat || 
+                __instance.ai is AI_UseCrafter)
             {
                 return true;
             }

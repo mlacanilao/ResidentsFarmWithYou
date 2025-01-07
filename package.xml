@@ -27,6 +27,10 @@
     Enable or disable automatically placing farming items into shared containers for both residents and players.
     [code] Default: false [/code]
 
+    [h2] Enable Fertilizer [/h2]
+    Enable or disable the use of fertilizer for crops.
+    [code] Default: true [/code]
+
     [h1] Configuration File Location [/h1]
     [code] Steam\steamapps\common\Elin\BepInEx\config\omegaplatinum.elin.residentsfarmwithyou.cfg [/code]
 
@@ -50,6 +54,10 @@
     [h2] 農作業アイテムの自動配置設定 [/h2]
     住人やプレイヤーが農作業アイテムを自動的に共有コンテナに配置するかどうかを設定します。
     [code] デフォルト: false [/code]
+
+    [h2] 肥料の有効化設定 [/h2]
+    作物に肥料を使用するかどうかを設定します。
+    [code] デフォルト: true [/code]
 
     [h1] 設定ファイルの場所 [/h1]
     [code] Steam\steamapps\common\Elin\BepInEx\config\omegaplatinum.elin.residentsfarmwithyou.cfg [/code]

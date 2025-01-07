@@ -118,17 +118,20 @@ namespace ResidentsFarmWithYou.Patches
                         }
                     }
                 }
-                
-                // Fertilizer
-                Thing fertilizer = ThingGen.Create(id: "fertilizer");
-                EClass._zone?.AddCard(t: fertilizer, point: __instance.pos).Install();
+
+                if (ResidentsFarmWithYouConfig.EnableFertilizer?.Value == true)
+                {
+                    // Fertilizer
+                    Thing fertilizer = ThingGen.Create(id: "fertilizer");
+                    EClass._zone?.AddCard(t: fertilizer, point: __instance.pos).Install();
+                }
             }
             
             __instance.owner?.SetAI(g: new AI_Water
             {
                 pos = __instance.pos
             });
-
+            
             return false;
         }
     }
