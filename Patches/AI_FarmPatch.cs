@@ -119,7 +119,9 @@ namespace ResidentsFarmWithYou.Patches
                     }
                 }
 
-                if (ResidentsFarmWithYouConfig.EnableFertilizer?.Value == true)
+                bool enableFertilizer = ResidentsFarmWithYouConfig.EnableFertilizer?.Value ?? true;
+
+                if (enableFertilizer == true)
                 {
                     // Fertilizer
                     Thing fertilizer = ThingGen.Create(id: "fertilizer");

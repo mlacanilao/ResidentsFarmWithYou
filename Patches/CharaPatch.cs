@@ -4,7 +4,9 @@ namespace ResidentsFarmWithYou.Patches
     {
         public static bool PickPrefix(Chara __instance, Thing t)
         {
-            if (ResidentsFarmWithYouConfig.EnableAutoPlaceFarmingItems?.Value == false ||
+            bool enableAutoPlaceFarmingItems = ResidentsFarmWithYouConfig.EnableAutoPlaceFarmingItems?.Value ?? false;
+            
+            if (enableAutoPlaceFarmingItems == false ||
                 EClass.core?.IsGameStarted == false ||
                 EClass._zone?.IsPCFaction == false ||
                 __instance == null ||

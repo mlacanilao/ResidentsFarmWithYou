@@ -17,7 +17,7 @@ namespace ResidentsFarmWithYou.Patches
 
             foreach (Point p in neighbors)
             {
-                if (p.IsFarmField && p.cell?.isWatered == false && p.cell?.HasBlock == false)
+                if (p.IsFarmField == true && p.cell?.isWatered == false && p.cell?.HasBlock == false)
                 {
                     newFarmPoint = p;
                     break;
