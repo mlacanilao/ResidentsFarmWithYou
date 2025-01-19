@@ -14,7 +14,7 @@
     [*] Residents will harvest crops, replant seeds, use fertilizer, and water the crops.
     [*] Harvested crops will go into the player inventory, and seeds will be placed into shared containers.
     [*] Requires a [b]Farm Sign[/b] nearby to enable resident participation.
-    [*] Optionally enable automatic placement of farming items into shared containers for both residents and players.
+    [*] Optionally require residents to use the player's fertilizer for farming, which must be in the player's main inventory.
     [/list]
 
     [h1] Compatibility [/h1]
@@ -23,13 +23,13 @@
     [h1] Configuration [/h1]
     Adjust these settings via the configuration file:
 
-    [h2] Enable Auto Place Farming Items [/h2]
-    Enable or disable automatically placing farming items into shared containers for both residents and players.
-    [code] Default: false [/code]
-
     [h2] Enable Fertilizer [/h2]
     Enable or disable the use of fertilizer for crops.
     [code] Default: true [/code]
+
+    [h2] Enable Require Fertilizer [/h2]
+    Enable or disable requiring residents to use the player's fertilizer for farming. The fertilizer must be in the player's main inventory.
+    [code] Default: false [/code]
 
     [h1] Configuration File Location [/h1]
     [code] Steam\steamapps\common\Elin\BepInEx\config\omegaplatinum.elin.residentsfarmwithyou.cfg [/code]
@@ -43,6 +43,7 @@
     [*] 収穫された作物はプレイヤーのインベントリに入り、種は共有コンテナに格納されます。
     [*] 住人が参加するには、近くに[b]畑の立札[/b]が必要です。
     [*] 住人やプレイヤーが農作業アイテムを共有コンテナに自動的に配置するオプションを有効にできます。
+    [*] 住人が農作物を育てる際にプレイヤーの肥料を使用するオプションがあります（肥料はプレイヤーのメインインベントリ内にある必要があります）。
     [/list]
 
     [h1] 互換性 [/h1]
@@ -51,13 +52,13 @@
     [h1] 設定 [/h1]
     設定ファイルから以下の設定を調整できます:
 
-    [h2] 農作業アイテムの自動配置設定 [/h2]
-    住人やプレイヤーが農作業アイテムを自動的に共有コンテナに配置するかどうかを設定します。
-    [code] デフォルト: false [/code]
-
     [h2] 肥料の有効化設定 [/h2]
     作物に肥料を使用するかどうかを設定します。
     [code] デフォルト: true [/code]
+
+    [h2] 肥料が必要かどうかの設定 [/h2]
+    住人が農作物を育てる際にプレイヤーの肥料を使用するかどうかを設定します。肥料はプレイヤーのメインインベントリ内にある必要があります。
+    [code] デフォルト: false [/code]
 
     [h1] 設定ファイルの場所 [/h1]
     [code] Steam\steamapps\common\Elin\BepInEx\config\omegaplatinum.elin.residentsfarmwithyou.cfg [/code]

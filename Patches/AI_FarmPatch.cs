@@ -120,12 +120,33 @@ namespace ResidentsFarmWithYou.Patches
                 }
 
                 bool enableFertilizer = ResidentsFarmWithYouConfig.EnableFertilizer?.Value ?? true;
+                bool enableRequireFertilizer = ResidentsFarmWithYouConfig.EnableRequireFertilizer?.Value ?? false;
 
                 if (enableFertilizer == true)
                 {
-                    // Fertilizer
-                    Thing fertilizer = ThingGen.Create(id: "fertilizer");
-                    EClass._zone?.AddCard(t: fertilizer, point: __instance.pos).Install();
+                    if (enableRequireFertilizer == true)
+                    {
+                        var inventory = EClass.pc?.things;
+
+                        if (inventory != null && inventory.Count > 0)
+                        {
+                            Thing playerFertilizer = inventory.Find<TraitFertilizer>();
+
+                            if (playerFertilizer != null && playerFertilizer.Num > 0)
+                            {
+                                playerFertilizer.ModNum(a:-1, notify: true);
+                                // Fertilizer
+                                Thing fertilizer = ThingGen.Create(id: "fertilizer");
+                                EClass._zone?.AddCard(t: fertilizer, point: __instance.pos).Install();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        // Fertilizer
+                        Thing fertilizer = ThingGen.Create(id: "fertilizer");
+                        EClass._zone?.AddCard(t: fertilizer, point: __instance.pos).Install();
+                    }
                 }
             }
             
