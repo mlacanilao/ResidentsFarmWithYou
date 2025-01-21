@@ -15,6 +15,7 @@
     [*] Harvested crops will go into the player inventory, and seeds will be placed into shared containers.
     [*] Requires a [b]Farm Sign[/b] nearby to enable resident participation.
     [*] Optionally require residents to use the player's fertilizer for farming, which must be in the player's main inventory.
+    [*] Optionally limit the level of crops and seeds to the player's farming level.
     [/list]
 
     [h1] Compatibility [/h1]
@@ -31,6 +32,10 @@
     Enable or disable requiring residents to use the player's fertilizer for farming. The fertilizer must be in the player's main inventory.
     [code] Default: false [/code]
 
+    [h2] Enable Farming Level Limit [/h2]
+    Enable or disable limiting the level for crops and seeds to the player's farming level.
+    [code] Default: false [/code]
+
     [h1] Configuration File Location [/h1]
     [code] Steam\steamapps\common\Elin\BepInEx\config\omegaplatinum.elin.residentsfarmwithyou.cfg [/code]
 
@@ -42,8 +47,8 @@
     [*] 住人は作物の収穫、種の再植え付け、肥料の使用、灌漑を行います。
     [*] 収穫された作物はプレイヤーのインベントリに入り、種は共有コンテナに格納されます。
     [*] 住人が参加するには、近くに[b]畑の立札[/b]が必要です。
-    [*] 住人やプレイヤーが農作業アイテムを共有コンテナに自動的に配置するオプションを有効にできます。
     [*] 住人が農作物を育てる際にプレイヤーの肥料を使用するオプションがあります（肥料はプレイヤーのメインインベントリ内にある必要があります）。
+    [*] 作物と種のレベルをプレイヤーの農業レベルに制限するオプションを有効にできます。
     [/list]
 
     [h1] 互換性 [/h1]
@@ -58,6 +63,10 @@
 
     [h2] 肥料が必要かどうかの設定 [/h2]
     住人が農作物を育てる際にプレイヤーの肥料を使用するかどうかを設定します。肥料はプレイヤーのメインインベントリ内にある必要があります。
+    [code] デフォルト: false [/code]
+
+    [h2] 農業レベル制限の設定 [/h2]
+    作物と種のレベルをプレイヤーの農業レベルに制限するかどうかを設定します。
     [code] デフォルト: false [/code]
 
     [h1] 設定ファイルの場所 [/h1]

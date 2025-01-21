@@ -20,6 +20,18 @@ namespace ResidentsFarmWithYou.Patches
             }
 
             int encLv = thing.encLV + (thing.encLV > 0 ? 1 : 0);
+            
+            bool enableFarmingLevelLimit = ResidentsFarmWithYouConfig.EnableFarmingLevelLimit?.Value ?? false;
+
+            if (enableFarmingLevelLimit == true)
+            {
+                int farmingLevel = EClass.pc?.Evalue(ele: 286) ?? 0;
+                if (encLv > farmingLevel)
+                {
+                    encLv = farmingLevel;
+                }
+            }
+            
             bool flag = t.IsFood || t.Evalue(ele: 10) > 0 || t.id == "grass";
             
             foreach (Element element in thing.elements?.dict?.Values)
