@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ConfigLayoutSchema.xsd">
+    <hlayout id="hlayout01">
+        <vlayout id="vlayout01" border="true">
+            <title>title01</title>
+
+            <toggle id="enableFertilizerToggle">
+                <contentId>toggle01</contentId>
+                <tooltip>tooltip01</tooltip>
+            </toggle>
+
+            <toggle id="enableRequireFertilizerToggle">
+                <contentId>toggle02</contentId>
+                <tooltip>tooltip02</tooltip>
+            </toggle>
+
+            <toggle id="enableEqualizePlantsToggle">
+                <contentId>toggle03</contentId>
+                <tooltip>tooltip03</tooltip>
+            </toggle>
+        </vlayout>
+    </hlayout>
+</config>

@@ -25,8 +25,8 @@ namespace ResidentsFarmWithYou.Patches
                 
                 foreach (Hobby w in chara.ListWorks())
                 {
-                    if (w.source.alias == "Farm" == false &&
-                        w.source.alias == "Gardening" == false)
+                    if (w.source.alias != "Farm" && 
+                        w.source.alias != "Gardening")
                     {
                         continue;
                     }
@@ -35,8 +35,8 @@ namespace ResidentsFarmWithYou.Patches
                 
                 foreach (Hobby h in chara.ListHobbies())
                 {
-                    if (h.source.alias == "Farm" == false &&
-                        h.source.alias == "Gardening" == false)
+                    if (h.source.alias != "Farm" && 
+                        h.source.alias != "Gardening")
                     {
                         continue;
                     }

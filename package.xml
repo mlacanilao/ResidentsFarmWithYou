@@ -12,10 +12,10 @@
     [list]
     [*] Residents with farming or gardening hobbies and work will actively join you when you farm or gather.
     [*] Residents will harvest crops, replant seeds, use fertilizer, and water the crops.
-    [*] Harvested crops will go into the player inventory, and seeds will be placed into shared containers.
+    [*] Items will be placed into shared containers.
     [*] Requires a [b]Farm Sign[/b] nearby to enable resident participation.
-    [*] Optionally require residents to use the player's fertilizer for farming, which must be in the player's main inventory.
-    [*] Optionally limit the level of crops and seeds to the player's farming level.
+    [*] Optionally require residents to use the player's fertilizer for farming, which must be in shared containers.
+    [*] Optionally equalize plants in neighboring tiles, sharing growth level and seed type when conditions are met.
     [/list]
 
     [h1] Compatibility [/h1]
@@ -32,23 +32,23 @@
     Enable or disable requiring residents to use the player's fertilizer for farming. The fertilizer must be in the player's main inventory.
     [code] Default: false [/code]
 
-    [h2] Enable Farming Level Limit [/h2]
-    Enable or disable limiting the level for crops and seeds to the player's farming level.
+    [h2] Enable Equalize Plants [/h2]
+    Enable or disable the equalization of plants in neighboring tiles. Equalization means that plants will share the same growth level and seed type when conditions are met.
     [code] Default: false [/code]
 
     [h1] Configuration File Location [/h1]
     [code] Steam\steamapps\common\Elin\BepInEx\config\omegaplatinum.elin.residentsfarmwithyou.cfg [/code]
 
-    Supports Game Version: 0.23.75
+    Supports Game Version: 0.23.83
 
     [h1] 特徴 [/h1]
     [list]
     [*] 農作業や園芸の趣味や仕事を持つ住人が、あなたが農作業や収穫を開始すると積極的に参加します。
     [*] 住人は作物の収穫、種の再植え付け、肥料の使用、灌漑を行います。
-    [*] 収穫された作物はプレイヤーのインベントリに入り、種は共有コンテナに格納されます。
+    [*] 収穫された作物はプレイヤーの共有コンテナに格納されます。
     [*] 住人が参加するには、近くに[b]畑の立札[/b]が必要です。
-    [*] 住人が農作物を育てる際にプレイヤーの肥料を使用するオプションがあります（肥料はプレイヤーのメインインベントリ内にある必要があります）。
-    [*] 作物と種のレベルをプレイヤーの農業レベルに制限するオプションを有効にできます。
+    [*] 住人が農作物を育てる際にプレイヤーの肥料を使用するオプションがあります（肥料は共有コンテナ内にある必要があります）。
+    [*] 隣接するタイルの植物を均等化するオプションを追加しました。条件が満たされた場合、同じ成長レベルと種の種類を共有します。
     [/list]
 
     [h1] 互換性 [/h1]
@@ -62,19 +62,19 @@
     [code] デフォルト: true [/code]
 
     [h2] 肥料が必要かどうかの設定 [/h2]
-    住人が農作物を育てる際にプレイヤーの肥料を使用するかどうかを設定します。肥料はプレイヤーのメインインベントリ内にある必要があります。
+    住人が農作物を育てる際にプレイヤーの肥料を使用するかどうかを設定します。肥料は共有コンテナ内にある必要があります。
     [code] デフォルト: false [/code]
 
-    [h2] 農業レベル制限の設定 [/h2]
-    作物と種のレベルをプレイヤーの農業レベルに制限するかどうかを設定します。
+    [h2] 植物の均等化設定 [/h2]
+    隣接するタイルの植物を均等化するかどうかを設定します。均等化により、植物は条件を満たした場合、同じ成長レベルと種の種類を共有します。
     [code] デフォルト: false [/code]
 
     [h1] 設定ファイルの場所 [/h1]
     [code] Steam\steamapps\common\Elin\BepInEx\config\omegaplatinum.elin.residentsfarmwithyou.cfg [/code]
 
-    対応ゲームバージョン: 0.23.75
+    対応ゲームバージョン: 0.23.83
   </description>
   <tags>General,Balance</tags>
   <visibility>Public</visibility>
-  <version>0.23.75</version>
+  <version>0.23.83</version>
 </Meta>

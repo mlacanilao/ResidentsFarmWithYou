@@ -1,3 +1,4 @@
+using System.IO;
 using BepInEx.Configuration;
 
 namespace ResidentsFarmWithYou
@@ -6,7 +7,11 @@ namespace ResidentsFarmWithYou
     {
         internal static ConfigEntry<bool> EnableFertilizer;
         internal static ConfigEntry<bool> EnableRequireFertilizer;
-        internal static ConfigEntry<bool> EnableFarmingLevelLimit;
+        internal static ConfigEntry<bool> EnableEqualizePlants;
+
+        
+        internal static string XmlPath { get; private set; }
+        internal static string TranslationXlsxPath { get; private set; }
         
         internal static void LoadConfig(ConfigFile config)
         {
@@ -34,18 +39,44 @@ namespace ResidentsFarmWithYou
                              "设置为 'true' 以需要肥料，或设置为 'false' 允许无肥料种植。"
             );
             
-            EnableFarmingLevelLimit = config.Bind(
+            EnableEqualizePlants = config.Bind(
                 section: ModInfo.Name,
-                key: "Enable Farming Level Limit",
+                key: "Enable Equalize Plants",
                 defaultValue: false,
-                description: "Enable or disable limiting the level for crops and seeds to the player's farming level.\n" +
-                             "Set to 'true' to enable the farming level limit, or 'false' to disable it.\n" +
-                             "作物と種のレベルをプレイヤーの農業レベルに制限するかどうかを設定します。\n" +
-                             "'true' に設定すると農業レベル制限が有効になり、'false' に設定すると無効になります。\n" +
-                             "启用或禁用将农作物和种子的等级限制为玩家的农业等级。\n" +
-                             "设置为 'true' 以启用等级限制，设置为 'false' 以禁用等级限制。"
+                description: "Enable or disable the equalization of plants in neighboring tiles.\n" +
+                             "Equalization means that plants in neighboring tiles will share the same growth level and seed type if they match certain conditions.\n" +
+                             "Set to 'true' to enable equalization, or 'false' to disable it.\n" +
+                             "隣接するタイルの植物を均等化するかどうかを有効または無効にします。\n" +
+                             "均等化とは、特定の条件を満たす場合、隣接するタイルの植物が同じ成長レベルや種子の種類を共有することを意味します。\n" +
+                             "'true' に設定すると均等化が有効になり、'false' に設定すると無効になります。\n" +
+                             "启用或禁用邻近地块植物的均衡化。\n" +
+                             "均衡化意味着如果满足某些条件，邻近地块的植物将共享相同的生长水平和种子类型。\n" +
+                             "设置为 'true' 启用均衡化，设置为 'false' 禁用均衡化。\n"
             );
-
+        }
+        
+        internal static void InitializeXmlPath(string xmlPath)
+        {
+            if (File.Exists(path: xmlPath))
+            {
+                XmlPath = xmlPath;
+            }
+            else
+            {
+                XmlPath = string.Empty;
+            }
+        }
+        
+        internal static void InitializeTranslationXlsxPath(string xlsxPath)
+        {
+            if (File.Exists(path: xlsxPath))
+            {
+                TranslationXlsxPath = xlsxPath;
+            }
+            else
+            {
+                TranslationXlsxPath = string.Empty;
+            }
         }
     }
 }
