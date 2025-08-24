@@ -2,7 +2,7 @@ namespace ResidentsFarmWithYou.Patches
 {
     public static class ElementContainerPatch
     {
-        public static void ModExpPrefix(ElementContainer __instance, int ele, int a, bool chain)
+        public static void ModExpPrefix(ElementContainer __instance, int ele, float a, bool chain)
         {
             if (EClass.core?.IsGameStarted == false ||
                 EClass._zone?.IsPCFaction == false ||

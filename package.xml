@@ -29,7 +29,7 @@
     [code] Default: true [/code]
 
     [h2] Enable Require Fertilizer [/h2]
-    Enable or disable requiring residents to use the player's fertilizer for farming. The fertilizer must be in the player's main inventory.
+    Enable or disable requiring residents to use the player's fertilizer for farming.
     [code] Default: false [/code]
 
     [h2] Enable Equalize Plants [/h2]
@@ -39,7 +39,7 @@
     [h1] Configuration File Location [/h1]
     [code] Steam\steamapps\common\Elin\BepInEx\config\omegaplatinum.elin.residentsfarmwithyou.cfg [/code]
 
-    Supports Game Version: 0.23.83
+    Supports Game Version: EA 23.187 Stable
 
     [h1] 特徴 [/h1]
     [list]
@@ -62,7 +62,7 @@
     [code] デフォルト: true [/code]
 
     [h2] 肥料が必要かどうかの設定 [/h2]
-    住人が農作物を育てる際にプレイヤーの肥料を使用するかどうかを設定します。肥料は共有コンテナ内にある必要があります。
+    住人が農作物を育てる際にプレイヤーの肥料を使用するかどうかを設定します。
     [code] デフォルト: false [/code]
 
     [h2] 植物の均等化設定 [/h2]
@@ -72,9 +72,9 @@
     [h1] 設定ファイルの場所 [/h1]
     [code] Steam\steamapps\common\Elin\BepInEx\config\omegaplatinum.elin.residentsfarmwithyou.cfg [/code]
 
-    対応ゲームバージョン: 0.23.83
+    対応ゲームバージョン: EA 23.187 Stable
   </description>
   <tags>General,Balance</tags>
   <visibility>Public</visibility>
-  <version>0.23.83</version>
+  <version>0.23.187</version>
 </Meta>
