@@ -14,7 +14,7 @@
                 <tooltip>tooltip02</tooltip>
             </toggle>
 
-            <toggle id="enableEqualizePlantsToggle">
+            <toggle id="enableSeedLevelMatchToggle">
                 <contentId>toggle03</contentId>
                 <tooltip>tooltip03</tooltip>
             </toggle>

@@ -52,82 +52,11 @@ namespace ResidentsFarmWithYou
             
             PlantData plantData = EClass._map?.TryGetPlant(c: this.pos?.cell);
             
-            if (plantData != null &&
-                FarmUtils.CanGrow(cell: this.pos?.cell) == true)
+            if (plantData != null)
             {
-                int mtp = 100;
-                int num = this.pos.growth.Step * mtp * (1);
-                int num2 = (int)(this.pos?.cell?.objVal / 30);
-                int num3 = ((int)this.pos?.cell?.objVal + num) / 30;
-                
-                if (num2 != num3)
-                {
-                    if (num2 == this.pos?.growth?.HarvestStage && 
-                        this.pos?.growth?.CanHarvest() == true)
-                    {
-                        try
-                        {
-                            FarmUtils.PopHarvest(c: null, growSystem: this.pos?.growth, plantData: plantData);
-                        }
-                        catch (Exception ex)
-                        {
-                            ResidentsFarmWithYou.Log(payload: $"Error during PopHarvest: {ex.Message}");
-                        }
-                    }
-                    
-                    if (num2 >= this.pos?.growth?.AutoMineStage)
-                    {
-                        bool enableEqualizePlants = ResidentsFarmWithYouConfig.EnableEqualizePlants?.Value ?? false;
-                        if (enableEqualizePlants == true)
-                        {
-                            Point point = GrowSystem.cell.GetPoint();
-                            this.pos?.growth?.EqualizePlants(point);
-                        }
-                        
-                        // Try pop seed
-                        Thing thing = TraitSeed.MakeSeed(obj: this.pos?.growth?.source, plant: plantData);
-                        
-                        FarmUtils.PopMineObj(growSystem: this.pos?.growth, plantData: plantData, c: null);
-                        
-                        if (thing != null)
-                        {
-                            this.pos?.SetObj(id: 0, value: 1, dir: 0);
-                            EClass._zone?.AddCard(t: thing, point: this.pos).Install();
-                        }
-                    }
-                    else if (num2 == this.pos?.growth?.StageLength - 1)
-                    {
-                        bool enableEqualizePlants = ResidentsFarmWithYouConfig.EnableEqualizePlants?.Value ?? false;
-                        if (enableEqualizePlants == true)
-                        {
-                            Point point = GrowSystem.cell.GetPoint();
-                            this.pos?.growth?.EqualizePlants(point);
-                        }
-                        
-                        // Try pop seed
-                        Thing thing2 = TraitSeed.MakeSeed(obj: this.pos?.growth?.source, plant: plantData);
-                        
-                        if (thing2 != null)
-                        {
-                            this.pos?.SetObj(id: 0, value: 1, dir: 0);
-                            EClass._zone?.AddCard(t: thing2, point: this.pos).Install();
-                        }
-                    }
-                    else
-                    {
-                        this.pos?.growth?.OnReachNextStage();
-                    }
-                }
-                else
-                {
-                    Cell cell = this.pos?.cell;
-                    cell.objVal += (byte)num;
-                }
-                this.pos?.cell.Refresh();
-                EClass._map?.RefreshFOV(x: (int)this.owner?.pos?.cell.x, z: (int)this.owner?.pos?.cell.z, radius: 6, recalculate: false);
-
                 bool enableFertilizer = ResidentsFarmWithYouConfig.EnableFertilizer?.Value ?? true;
                 bool enableRequireFertilizer = ResidentsFarmWithYouConfig.EnableRequireFertilizer?.Value ?? false;
+                bool enableSeedLevelMatch = ResidentsFarmWithYouConfig.EnableSeedLevelMatch?.Value ?? true;
 
                 if (enableFertilizer == true)
                 {
@@ -154,6 +83,11 @@ namespace ResidentsFarmWithYou
                         Thing fertilizer = ThingGen.Create(id: "fertilizer");
                         EClass._zone?.AddCard(t: fertilizer, point: this.pos).Install();
                     }
+                }
+
+                if (enableSeedLevelMatch == true)
+                {
+                    plantData.seed.encLV = EClass.pc?.Evalue(ele: 286) ?? plantData.seed.encLV;
                 }
             }
             

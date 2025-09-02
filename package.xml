@@ -11,11 +11,10 @@
     [h1] Features [/h1]
     [list]
     [*] Residents with farming or gardening hobbies and work will actively join you when you farm or gather.
-    [*] Residents will harvest crops, replant seeds, use fertilizer, and water the crops.
-    [*] Items will be placed into shared containers.
+    [*] Residents will water crops and apply fertilizer.
     [*] Requires a [b]Farm Sign[/b] nearby to enable resident participation.
     [*] Optionally require residents to use the player's fertilizer for farming, which must be in shared containers.
-    [*] Optionally equalize plants in neighboring tiles, sharing growth level and seed type when conditions are met.
+    [*] Optionally match planted seed level to the player's farming skill level when residents assist.
     [/list]
 
     [h1] Compatibility [/h1]
@@ -25,30 +24,31 @@
     Adjust these settings via the configuration file:
 
     [h2] Enable Fertilizer [/h2]
-    Enable or disable the use of fertilizer for crops.
+    Enable or disable residents applying fertilizer to crops.
     [code] Default: true [/code]
 
     [h2] Enable Require Fertilizer [/h2]
-    Enable or disable requiring residents to use the player's fertilizer for farming.
+    Enable or disable requiring residents to use the player's fertilizer from shared containers.
     [code] Default: false [/code]
 
-    [h2] Enable Equalize Plants [/h2]
-    Enable or disable the equalization of plants in neighboring tiles. Equalization means that plants will share the same growth level and seed type when conditions are met.
-    [code] Default: false [/code]
+    [h2] Enable Seed Level Match [/h2]
+    Enable or disable residents setting the planted seed level to match the player's farming skill level.
+    [code] Default: true [/code]
 
     [h1] Configuration File Location [/h1]
     [code] Steam\steamapps\common\Elin\BepInEx\config\omegaplatinum.elin.residentsfarmwithyou.cfg [/code]
 
-    Supports Game Version: EA 23.187 Stable
+    Supports Game Version: EA 23.188 Stable
+
+    ---
 
     [h1] 特徴 [/h1]
     [list]
     [*] 農作業や園芸の趣味や仕事を持つ住人が、あなたが農作業や収穫を開始すると積極的に参加します。
-    [*] 住人は作物の収穫、種の再植え付け、肥料の使用、灌漑を行います。
-    [*] 収穫された作物はプレイヤーの共有コンテナに格納されます。
+    [*] 住人は作物に水やりを行い、肥料を施します。
     [*] 住人が参加するには、近くに[b]畑の立札[/b]が必要です。
     [*] 住人が農作物を育てる際にプレイヤーの肥料を使用するオプションがあります（肥料は共有コンテナ内にある必要があります）。
-    [*] 隣接するタイルの植物を均等化するオプションを追加しました。条件が満たされた場合、同じ成長レベルと種の種類を共有します。
+    [*] 住人が植え付け時に種のレベルをプレイヤーの農業スキルレベルに合わせるオプションがあります。
     [/list]
 
     [h1] 互換性 [/h1]
@@ -58,23 +58,23 @@
     設定ファイルから以下の設定を調整できます:
 
     [h2] 肥料の有効化設定 [/h2]
-    作物に肥料を使用するかどうかを設定します。
+    住人が作物に肥料を施すかどうかを設定します。
     [code] デフォルト: true [/code]
 
     [h2] 肥料が必要かどうかの設定 [/h2]
     住人が農作物を育てる際にプレイヤーの肥料を使用するかどうかを設定します。
     [code] デフォルト: false [/code]
 
-    [h2] 植物の均等化設定 [/h2]
-    隣接するタイルの植物を均等化するかどうかを設定します。均等化により、植物は条件を満たした場合、同じ成長レベルと種の種類を共有します。
-    [code] デフォルト: false [/code]
+    [h2] 種レベル一致設定 [/h2]
+    住人が植え付け時に種のレベルをプレイヤーの農業スキルレベルに合わせるかどうかを設定します。
+    [code] デフォルト: true [/code]
 
     [h1] 設定ファイルの場所 [/h1]
     [code] Steam\steamapps\common\Elin\BepInEx\config\omegaplatinum.elin.residentsfarmwithyou.cfg [/code]
 
-    対応ゲームバージョン: EA 23.187 Stable
+    対応ゲームバージョン: EA 23.188 Stable
   </description>
   <tags>General,Balance</tags>
   <visibility>Public</visibility>
-  <version>0.23.187</version>
+  <version>0.23.188</version>
 </Meta>

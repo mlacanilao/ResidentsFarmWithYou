@@ -57,11 +57,11 @@ namespace ResidentsFarmWithYou
                     ResidentsFarmWithYouConfig.EnableRequireFertilizer.Value = isChecked;
                 };
                 
-                var enableEqualizePlantsToggle = builder.GetPreBuild<OptToggle>(id: "enableEqualizePlantsToggle");
-                enableEqualizePlantsToggle.Checked = ResidentsFarmWithYouConfig.EnableEqualizePlants.Value;
-                enableEqualizePlantsToggle.OnValueChanged += isChecked =>
+                var enableSeedLevelMatchToggle = builder.GetPreBuild<OptToggle>(id: "enableSeedLevelMatchToggle");
+                enableSeedLevelMatchToggle.Checked = ResidentsFarmWithYouConfig.EnableSeedLevelMatch.Value;
+                enableSeedLevelMatchToggle.OnValueChanged += isChecked =>
                 {
-                    ResidentsFarmWithYouConfig.EnableEqualizePlants.Value = isChecked;
+                    ResidentsFarmWithYouConfig.EnableSeedLevelMatch.Value = isChecked;
                 };
             };
         }
